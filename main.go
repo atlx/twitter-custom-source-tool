@@ -90,20 +90,27 @@ func main() {
 			lat = &Places[resAsInt - 1].Lat
 			long = &Places[resAsInt - 1].Long
 		} else {
-			latInput := waitForInput("Input desired latitude number (float64): ")
-			latNum, err := strconv.ParseFloat(latInput, 64)
-			if err != nil {
-				fmt.Println("Cannot parse latitude.")
+			args := waitForInput("Input desired latitude and longitude number, separated by a space (5.000 6.000): ")
+			latLongArray := strings.Split(args, " ")
+			if len(latLongArray) != 2 {
+				fmt.Println("Latitude/longitude not correctly formatted.")
 				end()
 				return
 			}
-			longInput := waitForInput("Input desired longitude number (float64): ")
-			longNum, err := strconv.ParseFloat(longInput, 64)
+			latNum, err := strconv.ParseFloat(latLongArray[0], 64)
 			if err != nil {
-				fmt.Println("Cannot parse longitude.")
+				fmt.Println("Failed to parse latitude.")
 				end()
 				return
 			}
+			longNum, err := strconv.ParseFloat(strings.TrimRight(latLongArray[1], "\n\r"), 64)
+			if err != nil {
+				fmt.Println("Failed to parse longitude.")
+				end()
+				return
+			}
+			fmt.Println(latNum)
+			fmt.Println(longNum)
 			lat = &latNum
 			long = &longNum
 		}
