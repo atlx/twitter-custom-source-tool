@@ -58,5 +58,30 @@ var (
 			Long: 176.540298,
 			Name: "Taumatawhakatangihangakoauauotamateaturipukakapikimaungahoronukupokaiwhenuakitanatahu",
 		},
+		{
+			Lat: 38.1201,
+			Long: 86.9142,
+			Name: "Santa Claus",
+		},
+		{
+			Lat: 35.0756,
+			Long: 92.5599,
+			Name: "Toad Suck",
+		},
+		{
+			Lat: 30.9746,
+			Long: 97.7773,
+			Name: "Ding Dong",
+		},
+		{
+			Lat: 34.2750,
+			Long: 98.4531,
+			Name: "Cookietown",
+		},
+		{
+			Lat: 40.0384,
+			Long: 76.1075,
+			Name: "Intercourse",
+		},
 	}
 )
